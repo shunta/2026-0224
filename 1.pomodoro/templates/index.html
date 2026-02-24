@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポモドーロタイマー</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ポモドーロタイマー</h1>
+        </header>
+        
+        <main>
+            <!-- タイマー表示 -->
+            <div class="timer-container">
+                <div class="timer-display" id="timer-display">25:00</div>
+                <div class="status-text" id="status-text">準備完了</div>
+            </div>
+            
+            <!-- コントロールボタン -->
+            <div class="controls">
+                <button id="start-btn" class="btn btn-primary">開始</button>
+                <button id="reset-btn" class="btn btn-secondary">リセット</button>
+            </div>
+            
+            <!-- 今日の進捗 -->
+            <div class="progress-container">
+                <h2>今日の進捗</h2>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">完了数</span>
+                        <span class="stat-value" id="completed-count">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">集中時間</span>
+                        <span class="stat-value" id="total-time">0分</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
+</body>
+</html>
